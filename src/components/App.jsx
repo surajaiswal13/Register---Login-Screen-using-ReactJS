@@ -6,9 +6,9 @@ var isLoggedIn = false;
 
 function App() {
   return <div className="container">
-    {(isLoggedIn === true && isRegistered === true) ? <h1>Hello</h1> 
-    : (isRegistered === false && isLoggedIn === false) ? <Login isRegistered={isRegistered} isLoggedIn={isLoggedIn} /> 
-    : (isRegistered === true && isLoggedIn === false) ? <Login isRegistered={isRegistered} isLoggedIn={isLoggedIn} /> 
+    {(isLoggedIn && isRegistered) ? <h1>Hello</h1> 
+    : (!isRegistered && !isLoggedIn) ? <Login isRegistered={isRegistered} isLoggedIn={isLoggedIn} /> 
+    : (isRegistered && !isLoggedIn) ? <Login isRegistered={isRegistered} isLoggedIn={isLoggedIn} /> 
     : <h1>SomeThing Went Wrong</h1> } 
   </div>;
 }
