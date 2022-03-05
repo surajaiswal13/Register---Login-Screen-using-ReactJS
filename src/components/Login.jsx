@@ -6,7 +6,10 @@ function Login(props) {
     <form className="form">
       <Input type="text" placeholder="Username" />
       <Input type="password" placeholder="Password" />
-      <button type="submit">Login</button>
+
+      {props.isRegistered === false && <Input type="password" placeholder="Confirm Password" />}
+ 
+      <button type="submit">{props.isRegistered === true ? "Login" : "Registered"}</button>
     </form>
   );
 }
